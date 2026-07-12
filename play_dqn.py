@@ -1,11 +1,20 @@
-# play_dqn.py — watch the trained agent (greedy, no exploration)
+"""
+play_dqn.py — run the trained DQN in TEST mode (greedy, no exploration).
+
+How to run:
+    python play_dqn.py
+
+Loads `dqn_maze.pth` and opens a Pygame window showing 10 greedy rollouts,
+then prints the success rate. This is the script to run to demo the final
+solution in the exam.
+"""
 import numpy as np
 import torch
 from env import ContinuousMazeEnv
 from dqn_agent import DQNAgent
 
 agent = DQNAgent()
-agent.load("dqn_maze.pt")
+agent.load("dqn_maze.pth")
 
 env = ContinuousMazeEnv(render_mode="human")
 n_runs, successes = 10, 0

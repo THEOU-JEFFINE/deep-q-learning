@@ -35,7 +35,7 @@ The agent must cross the maze from left to right, threading between danger zones
 | --- | --- |
 | `env.py` | The continuous maze environment (Gymnasium + Pygame). Run directly to visualize random rollouts. |
 | `dqn_agent.py` | `QNetwork`, `ReplayBuffer`, and `DQNAgent` (act / train / save / load). |
-| `main.py` | Train the agent (800 episodes), save weights to `dqn_maze.pt`, and plot `training_curve.png`. |
+| `main.py` | Train the agent (800 episodes), save weights to `dqn_maze.pth`, and plot `training_curve.png`. |
 | `play_dqn.py` | Load the trained model and watch 10 greedy rollouts in a Pygame window; reports success rate. |
 | `record_dqn.py` | Record a greedy rollout to `dqn_solution.gif` and `dqn_solution.mp4`. |
 | `experiments.py` | Hyperparameter sweeps over hidden size, learning rate, and target-sync interval; saves `sweep_*.png`. |
@@ -48,7 +48,7 @@ Install dependencies:
 pip install torch numpy matplotlib gymnasium pygame imageio
 ```
 
-Train the agent (headless; produces `dqn_maze.pt` and `training_curve.png`):
+Train the agent (headless; produces `dqn_maze.pth` and `training_curve.png`):
 
 ```bash
 python main.py

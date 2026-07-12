@@ -1,4 +1,12 @@
-# record_dqn.py — record the greedy run as GIF + MP4
+"""
+record_dqn.py — record one greedy rollout of the trained DQN to GIF + MP4.
+
+How to run:
+    python record_dqn.py
+
+Loads `dqn_maze.pth`, plays one greedy episode, and saves it to
+`dqn_solution.gif` and `dqn_solution.mp4` for the presentation slides.
+"""
 import numpy as np
 import pygame
 import imageio
@@ -7,7 +15,7 @@ from env import ContinuousMazeEnv
 from dqn_agent import DQNAgent
 
 agent = DQNAgent()
-agent.load("dqn_maze.pt")
+agent.load("dqn_maze.pth")
 
 env = ContinuousMazeEnv(render_mode="human")
 state, _ = env.reset()

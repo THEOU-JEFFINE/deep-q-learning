@@ -1,4 +1,14 @@
-# experiments.py — requirement 2: tune hyperparameters & architecture
+"""
+experiments.py — hyperparameter / architecture sweeps for Project B.
+
+How to run:
+    python experiments.py
+
+Runs three sweeps (hidden size, learning rate, target-sync interval), each
+training from scratch and evaluating greedy success over 10 rollouts, and
+saves the comparison plots to sweep_hidden_size.png, sweep_learning_rate.png
+and sweep_target_sync.png.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import torch

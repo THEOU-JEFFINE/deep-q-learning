@@ -1,4 +1,13 @@
-# main.py — train the DQN agent on the continuous maze
+"""
+main.py — train the DQN agent on the continuous maze (Project B).
+
+How to run:
+    python main.py
+
+Trains for 800 episodes headless (no window), saves the learned weights to
+`dqn_maze.pth`, and writes the reward curve to `training_curve.png`.
+Depends on `env.py` (ContinuousMazeEnv) and `dqn_agent.py` (DQNAgent).
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
@@ -64,8 +73,8 @@ for ep in range(1, EPISODES + 1):
               f"buffer {len(agent.buffer)}")
 
 # ---------------- Save + training curve (deliverable 3.1.2) ----------------
-agent.save("dqn_maze.pt")
-print("Model saved to dqn_maze.pt")
+agent.save("dqn_maze.pth")
+print("Model saved to dqn_maze.pth")
 
 window = 20
 smoothed = np.convolve(episode_rewards, np.ones(window)/window, mode="valid")

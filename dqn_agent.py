@@ -1,4 +1,19 @@
-# dqn_agent.py
+"""
+dqn_agent.py — the DQN agent for Project B.
+
+This module is imported by main.py / play_dqn.py / record_dqn.py; it is not run
+directly. It provides three classes:
+    QNetwork     — MLP approximating Q(s, ·) (2 -> hidden -> hidden -> 4).
+    ReplayBuffer — stores (s, a, r, s', done) transitions, samples minibatches.
+    DQNAgent     — act() (epsilon-greedy), train_step() (one gradient update),
+                   save(path) / load(path) for the .pth weights.
+
+Example:
+    from dqn_agent import DQNAgent
+    agent = DQNAgent()
+    agent.load("dqn_maze.pth")
+    action = agent.act(state, epsilon=0.0)   # greedy / test mode
+"""
 import random
 from collections import deque
 
